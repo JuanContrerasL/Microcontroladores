@@ -1,0 +1,133 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Resumen-2.md</title><style></style></head><body id="preview">
+<p class="has-line-data" data-line-start="0" data-line-end="1">#Temporizadores en Microcontroladores (PIC18F4550)</p>
+<h2 class="code-line" data-line-start=2 data-line-end=3 ><a id="1_Qu_es_un_temporizador_2"></a>1. ¿Qué es un temporizador?</h2>
+<ul>
+<li class="has-line-data" data-line-start="3" data-line-end="4">Módulo de conteo presente en microcontroladores.</li>
+<li class="has-line-data" data-line-start="4" data-line-end="5">Resoluciones comunes: <em>8 o 16 bits</em>.</li>
+<li class="has-line-data" data-line-start="5" data-line-end="10">Usos:
+<ul>
+<li class="has-line-data" data-line-start="6" data-line-end="7">Medición de tiempo.</li>
+<li class="has-line-data" data-line-start="7" data-line-end="8">Generación de señales (como reloj).</li>
+<li class="has-line-data" data-line-start="8" data-line-end="10">Conteo de eventos.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 class="code-line" data-line-start=12 data-line-end=13 ><a id="2_Aplicaciones_12"></a>2. Aplicaciones</h2>
+<ul>
+<li class="has-line-data" data-line-start="13" data-line-end="14"><em>Temporizador</em>: mide intervalos de tiempo.</li>
+<li class="has-line-data" data-line-start="14" data-line-end="15"><em>Contador</em>: cuenta eventos externos.</li>
+<li class="has-line-data" data-line-start="15" data-line-end="17">Utilizado para sincronización o generación de interrupciones.</li>
+</ul>
+<hr>
+<h2 class="code-line" data-line-start=19 data-line-end=20 ><a id="3_Principios_de_funcionamiento_19"></a>3. Principios de funcionamiento</h2>
+<ul>
+<li class="has-line-data" data-line-start="20" data-line-end="21">Cuenta desde 0 hasta 2ⁿ - 1.</li>
+<li class="has-line-data" data-line-start="21" data-line-end="23">Al desbordarse, genera una <em>interrupción</em>.</li>
+</ul>
+<hr>
+<h2 class="code-line" data-line-start=25 data-line-end=26 ><a id="4_Problemas_de_lectura_25"></a>4. Problemas de lectura</h2>
+<ul>
+<li class="has-line-data" data-line-start="26" data-line-end="27">Microcontroladores de 8 bits leyendo timers de 16 bits pueden generar errores.</li>
+<li class="has-line-data" data-line-start="27" data-line-end="29">Se usan <em>registros temporales</em> para evitar inconsistencias en la lectura.</li>
+</ul>
+<hr>
+<h2 class="code-line" data-line-start=31 data-line-end=32 ><a id="5_Seales_de_reloj_31"></a>5. Señales de reloj</h2>
+<ul>
+<li class="has-line-data" data-line-start="32" data-line-end="36">Temporizadores se sincronizan con:
+<ul>
+<li class="has-line-data" data-line-start="33" data-line-end="34"><em>Señales internas</em> (del oscilador).</li>
+<li class="has-line-data" data-line-start="34" data-line-end="36"><em>Señales externas</em> (flancos en pines).</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 class="code-line" data-line-start=38 data-line-end=39 ><a id="6_Prescaler_38"></a>6. Prescaler</h2>
+<ul>
+<li class="has-line-data" data-line-start="39" data-line-end="40">Reduce la frecuencia del reloj para lograr <em>conteos más largos</em>.</li>
+<li class="has-line-data" data-line-start="40" data-line-end="42">Pierde resolución pero permite medir <em>tiempos más grandes</em>.</li>
+</ul>
+<hr>
+<h2 class="code-line" data-line-start=44 data-line-end=45 ><a id="7_Granularidad_44"></a>7. Granularidad</h2>
+<ul>
+<li class="has-line-data" data-line-start="45" data-line-end="46">Resolución mínima de medición.</li>
+<li class="has-line-data" data-line-start="46" data-line-end="50">Ejemplo:
+<ul>
+<li class="has-line-data" data-line-start="47" data-line-end="48">Reloj = 1 MHz.</li>
+<li class="has-line-data" data-line-start="48" data-line-end="50">Timer 8 bits sin prescaler: máx. 255 µs de conteo (1 µs por ciclo).</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 class="code-line" data-line-start=52 data-line-end=53 ><a id="8_Contador_con_seal_externa_52"></a>8. Contador con señal externa</h2>
+<ul>
+<li class="has-line-data" data-line-start="53" data-line-end="54">Cuenta <em>flancos</em> (subida o bajada) en pines digitales.</li>
+<li class="has-line-data" data-line-start="54" data-line-end="56">Útil para conteos <em>no periódicos</em>.</li>
+</ul>
+<hr>
+<h2 class="code-line" data-line-start=58 data-line-end=59 ><a id="9_Uso_del_cristal_58"></a>9. Uso del cristal</h2>
+<ul>
+<li class="has-line-data" data-line-start="59" data-line-end="60">Temporizador usa oscilador externo.</li>
+<li class="has-line-data" data-line-start="60" data-line-end="62">Ideal para aplicaciones de <em>reloj en tiempo real (RTC)</em>.</li>
+</ul>
+<hr>
+<h2 class="code-line" data-line-start=64 data-line-end=65 ><a id="10_Temporizadores_del_PIC18F4550_64"></a>10. Temporizadores del PIC18F4550</h2>
+<table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>Timer</th>
+<th>Resolución</th>
+<th>Modo</th>
+<th>Notas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TMR0</td>
+<td>8/16 bits</td>
+<td>Timer/Contador</td>
+<td>Prescaler, interrupciones</td>
+</tr>
+<tr>
+<td>TMR1</td>
+<td>16 bits</td>
+<td>Timer/Contador</td>
+<td></td>
+</tr>
+<tr>
+<td>TMR2</td>
+<td>8 bits</td>
+<td>Solo Timer</td>
+<td></td>
+</tr>
+<tr>
+<td>TMR3</td>
+<td>16 bits</td>
+<td>Timer/Contador</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 class="code-line" data-line-start=74 data-line-end=75 ><a id="11_Timer_0_en_detalle_74"></a>11. Timer 0 en detalle</h2>
+<ul>
+<li class="has-line-data" data-line-start="75" data-line-end="76">Funciona como <em>temporizador o contador</em>.</li>
+<li class="has-line-data" data-line-start="76" data-line-end="77">Prescaler de <em>8 bits</em>.</li>
+<li class="has-line-data" data-line-start="77" data-line-end="78">Registro de conteo: <em>TMR0H:TMR0L (16 bits)</em>.</li>
+<li class="has-line-data" data-line-start="78" data-line-end="79"><em>Lectura/escritura posible</em> durante ejecución.</li>
+<li class="has-line-data" data-line-start="79" data-line-end="81">Genera interrupción por desborde (valor 255 en modo 8 bits).</li>
+</ul>
+<hr>
+<h2 class="code-line" data-line-start=83 data-line-end=84 ><a id="12_Clculos_de_tiempo_83"></a>12. Cálculos de tiempo</h2>
+<h3 class="code-line" data-line-start=85 data-line-end=86 ><a id="Frmulas_85"></a>Fórmulas:</h3>
+<ul>
+<li class="has-line-data" data-line-start="86" data-line-end="87">Fosc / 4 = Frecuencia de instrucción</li>
+<li class="has-line-data" data-line-start="87" data-line-end="88">T_instrucción = 1 / (Fosc / 4)</li>
+<li class="has-line-data" data-line-start="88" data-line-end="90">T_desbordamiento = (MaxCount - TMRx) * T_instrucción * Prescaler</li>
+</ul>
+<h2 class="code-line" data-line-start=90 data-line-end=91 ><a id="13_Precarga_90"></a>13. Precarga</h2>
+<p class="has-line-data" data-line-start="91" data-line-end="92">Para lograr un retardo de 5 ms:</p>
+<pre><code class="has-line-data" data-line-start="94" data-line-end="96" class="language-text">TMRx = 65536 - (T_conteo / (T_instrucción * Prescaler))
+TMRx = 65536 - (5 ms / 1 µs) = 60536</code></pre>
+
+</body></html>

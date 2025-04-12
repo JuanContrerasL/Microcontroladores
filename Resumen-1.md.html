@@ -1,0 +1,56 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Resumen-1.md</title><style></style></head><body id="preview">
+<h1 class="code-line" data-line-start=0 data-line-end=1 ><a id="Presentacin_detallada_Teclado_y_Perifricos_en_Microcontroladores_PIC_18F4550_0"></a>Presentación detallada: Teclado y Periféricos en Microcontroladores (PIC 18F4550)</h1>
+<h2 class="code-line" data-line-start=2 data-line-end=3 ><a id="1_Hardware_en_microcontroladores_2"></a>1. Hardware en microcontroladores</h2>
+<p class="has-line-data" data-line-start="4" data-line-end="5">En los sistemas basados en microcontroladores, el hardware se refiere a los dispositivos físicos que interactúan con el entorno. Estos se clasifican en:</p>
+<ul>
+<li class="has-line-data" data-line-start="6" data-line-end="7"><em>Dispositivos de entrada</em>: sensores, potenciómetros, pulsadores, botones, etc.</li>
+<li class="has-line-data" data-line-start="7" data-line-end="9"><em>Dispositivos de salida</em>: LEDs, displays, motores, actuadores, entre otros.</li>
+</ul>
+<p class="has-line-data" data-line-start="9" data-line-end="10">Una correcta implementación garantiza estabilidad y confiabilidad en sistemas embebidos.</p>
+<hr>
+<h2 class="code-line" data-line-start=13 data-line-end=14 ><a id="2_Pulsadores_y_botones_definicin_y_funcionamiento_13"></a>2. Pulsadores y botones: definición y funcionamiento</h2>
+<h3 class="code-line" data-line-start=15 data-line-end=16 ><a id="21_Pulsadores_15"></a>2.1 Pulsadores</h3>
+<ul>
+<li class="has-line-data" data-line-start="17" data-line-end="18">Funcionan aplicando presión mecánica.</li>
+<li class="has-line-data" data-line-start="18" data-line-end="19">Cambian su estado solo mientras están presionados.</li>
+<li class="has-line-data" data-line-start="19" data-line-end="23">Tipos:
+<ul>
+<li class="has-line-data" data-line-start="20" data-line-end="21"><em>Normalmente abierto (NO)</em>: solo conduce al presionarse.</li>
+<li class="has-line-data" data-line-start="21" data-line-end="23"><em>Normalmente cerrado (NC)</em>: conduce normalmente, se interrumpe al presionar.</li>
+</ul>
+</li>
+</ul>
+<h3 class="code-line" data-line-start=23 data-line-end=24 ><a id="22_Botones_23"></a>2.2 Botones</h3>
+<ul>
+<li class="has-line-data" data-line-start="25" data-line-end="26">Mantienen su nuevo estado con un solo clic.</li>
+<li class="has-line-data" data-line-start="26" data-line-end="27">Requieren otra pulsación para cambiar de nuevo.</li>
+<li class="has-line-data" data-line-start="27" data-line-end="29">Incluyen dipswitches.</li>
+</ul>
+<blockquote>
+<p class="has-line-data" data-line-start="29" data-line-end="30"><em>Nota:</em> Su lectura precisa requiere considerar el efecto rebote.</p>
+</blockquote>
+<hr>
+<h2 class="code-line" data-line-start=33 data-line-end=34 ><a id="3_Estructura_mecnica_y_efecto_rebote_33"></a>3. Estructura mecánica y efecto rebote</h2>
+<h3 class="code-line" data-line-start=35 data-line-end=36 ><a id="31_Construccin_mecnica_35"></a>3.1 Construcción mecánica</h3>
+<ul>
+<li class="has-line-data" data-line-start="37" data-line-end="38">Dos láminas metálicas se cierran con presión.</li>
+<li class="has-line-data" data-line-start="38" data-line-end="40">No aplicable a teclados capacitivos o resistivos.</li>
+</ul>
+<h3 class="code-line" data-line-start=40 data-line-end=41 ><a id="32_Efecto_rebote_bounce_effect_40"></a>3.2 Efecto rebote (bounce effect)</h3>
+<ul>
+<li class="has-line-data" data-line-start="42" data-line-end="43">Las láminas vibran por su elasticidad, generando oscilaciones.</li>
+<li class="has-line-data" data-line-start="43" data-line-end="44">Oscila entre abierto y cerrado durante 20–40 ms.</li>
+<li class="has-line-data" data-line-start="44" data-line-end="46">Puede causar múltiples señales en una sola pulsación.</li>
+</ul>
+<blockquote>
+<p class="has-line-data" data-line-start="46" data-line-end="47"><em>Implicación:</em> Sin corrección, una sola pulsación puede ser leída múltiples veces.</p>
+</blockquote>
+<hr>
+<h2 class="code-line" data-line-start=50 data-line-end=51 ><a id="4_Soluciones_al_efecto_rebote_50"></a>4. Soluciones al efecto rebote</h2>
+<h3 class="code-line" data-line-start=52 data-line-end=53 ><a id="41_Solucin_por_hardware_Filtro_RC_52"></a>4.1 Solución por hardware: Filtro RC</h3>
+<ul>
+<li class="has-line-data" data-line-start="54" data-line-end="55">Usa una resistencia ® y un condensador ©.</li>
+<li class="has-line-data" data-line-start="55" data-line-end="56">Suaviza los cambios bruscos del contacto mecánico</li>
+</ul>
+
+</body></html>
