@@ -1,3 +1,7 @@
+Cristian sotelo 134770
+Juan Pablo Contreras 134126
+carlos andres estupiñan 82149
+
 # Presentación detallada: Teclado y Periféricos en Microcontroladores (PIC 18F4550)
 
 ## 1. Hardware en microcontroladores
