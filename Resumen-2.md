@@ -1,3 +1,7 @@
+Cristian sotelo 134770
+Juan Pablo Contreras 134126
+carlos andres estupiñan 82149
+
 #Temporizadores en Microcontroladores (PIC18F4550)
 
 ## 1. ¿Qué es un temporizador?
